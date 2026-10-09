@@ -1,5 +1,7 @@
 # linear-cli
 
+> Not sure how to use it? Ask your coding agent to help.
+
 Minimal command-line client for [Linear's MCP server](https://linear.app/docs/mcp).
 
 ## Build
@@ -19,8 +21,6 @@ linear-cli call <tool> '{...}'   # call any tool
 ```
 
 Run `linear-cli --help` for all commands and flags.
-
-> Not sure how to use it? Ask your coding agent to help.
 
 ## Config
 
