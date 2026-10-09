@@ -7,4 +7,4 @@
 [x86_64](https://github.com/rijieli/linear-cli/releases/download/{{VERSION}}/linear-cli_{{VERSION}}_linux_amd64.tar.gz) | [ARM64](https://github.com/rijieli/linear-cli/releases/download/{{VERSION}}/linear-cli_{{VERSION}}_linux_arm64.tar.gz)
 
 **Windows**
-[x86_64](https://github.com/rijieli/linear-cli/releases/download/{{VERSION}}/linear-cli_{{VERSION}}_windows_amd64.zip)
+[x86_64](https://github.com/rijieli/linear-cli/releases/download/{{VERSION}}/linear-cli_{{VERSION}}_windows_amd64.zip) | [ARM64](https://github.com/rijieli/linear-cli/releases/download/{{VERSION}}/linear-cli_{{VERSION}}_windows_arm64.zip)
