@@ -7,3 +7,4 @@ linear.json
 linear-last.json
 
 .DS_Store
+dist/

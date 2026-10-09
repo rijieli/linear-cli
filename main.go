@@ -17,14 +17,18 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"runtime"
+	"runtime/debug"
 	"strings"
 	"time"
 
 	"github.com/spf13/cobra"
 )
 
+// version is set at build time: -ldflags "-X main.version=v1.2.3".
+var version = "dev"
+
 const (
-	version    = "0.2.0"
 	configName = "linear.json"
 	lastName   = "linear-last.json"
 	protocol   = "2025-03-26"
@@ -107,6 +111,9 @@ type client struct {
 }
 
 func main() {
+	if bi, ok := debug.ReadBuildInfo(); ok && version == "dev" && bi.Main.Version != "" && bi.Main.Version != "(devel)" {
+		version = bi.Main.Version // go install module@vX.Y.Z
+	}
 	c := &client{http: &http.Client{}}
 	root := &cobra.Command{
 		Use:     "linear-cli",
@@ -879,7 +886,14 @@ func randToken(n int) string {
 }
 
 func openBrowser(u string) {
-	_ = exec.Command("open", u).Start()
+	switch runtime.GOOS {
+	case "darwin":
+		_ = exec.Command("open", u).Start()
+	case "windows":
+		_ = exec.Command("rundll32", "url.dll,FileProtocolHandler", u).Start()
+	default:
+		_ = exec.Command("xdg-open", u).Start()
+	}
 }
 
 func oneLine(s string) string {
