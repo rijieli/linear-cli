@@ -8,5 +8,3 @@
 
 **Windows**
 [x86_64](https://github.com/rijieli/linear-cli/releases/download/{{VERSION}}/linear-cli_{{VERSION}}_windows_amd64.zip)
-
-[checksums.txt](https://github.com/rijieli/linear-cli/releases/download/{{VERSION}}/checksums.txt)
