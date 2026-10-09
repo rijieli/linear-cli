@@ -1,0 +1,9 @@
+# build output
+/linear-cli
+linear-cli
+
+# secrets and cached results
+linear.json
+linear-last.json
+
+.DS_Store
