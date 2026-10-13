@@ -5,6 +5,7 @@ import (
 	"bytes"
 	"cmp"
 	"crypto/rand"
+	_ "embed"
 	"crypto/sha256"
 	"encoding/base64"
 	"encoding/json"
@@ -27,6 +28,9 @@ import (
 
 // version is set at build time: -ldflags "-X main.version=v1.2.3".
 var version = "dev"
+
+//go:embed workflow.md
+var workflow string
 
 const (
 	configName = "linear.json"
@@ -275,6 +279,13 @@ LINEAR_API_KEY overrides api_key. Results saved with --save go to linear-last.js
 				}
 			}
 			return fmt.Errorf("unknown tool %q (run: linear-cli tools)", args[0])
+		},
+	}, &cobra.Command{
+		Use:   "workflow",
+		Short: "Print the standard issue workflow for coding agents (offline)",
+		Args:  cobra.NoArgs,
+		Run: func(*cobra.Command, []string) {
+			fmt.Print(workflow)
 		},
 	})
 

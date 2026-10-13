@@ -18,6 +18,7 @@ linear-cli status                # login state and token expiry
 linear-cli issues '{"limit": 20}'
 linear-cli tools                 # list MCP tools
 linear-cli call <tool> '{...}'   # call any tool
+linear-cli workflow              # standard issue workflow for coding agents
 ```
 
 Run `linear-cli --help` for all commands and flags.
